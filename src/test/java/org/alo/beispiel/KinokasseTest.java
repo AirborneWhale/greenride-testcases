@@ -9,11 +9,11 @@ class KinokasseTest {
 
     @Test                                                             // (3)
     void kindMit13ZahltSechsEuro() {                                  // (4)
-        // Vorbereiten
+        // Arrange - Vorbereiten
         Kinokasse kasse = new Kinokasse();
-        // Ausfuehren
+        // Act - Ausfuehren
         int eintritt = kasse.berechneEintritt(13);
-        // Pruefen
+        // Assert - Pruefen
         assertEquals(6, eintritt);                                    // (5)
     }
 
