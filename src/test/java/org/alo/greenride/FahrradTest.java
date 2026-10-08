@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -74,7 +73,7 @@ class FahrradTest {
     }
 
     @Test
-    void KennungMitFuehrenderLeerstelleWirdNichtGefunden() {
+    void KennungMitLeerstelleWirdNichtGefunden() {
         // Arrange
         Station station = new Station(
                 "Warschauer Strasse",
