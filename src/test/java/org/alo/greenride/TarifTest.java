@@ -4,15 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TarifTest {
 
@@ -73,5 +67,33 @@ public class TarifTest {
     public void testTarif100d() {
         Tarif tarif = new Tarif();
         assertThrows(IllegalArgumentException.class, () -> tarif.berechneMietpreis(100));
+    }
+
+    @Test
+    public void testOp1notOp2() {
+        Tarif tarif = new Tarif();
+        int Preis = tarif.berechneStartgebuehr(true, false);
+        assertEquals(4, Preis);
+    }
+
+    @Test
+    public void testOp2notOp1() {
+        Tarif tarif = new Tarif();
+        int Preis = tarif.berechneStartgebuehr(false, true);
+        assertEquals(3, Preis);
+    }
+
+    @Test
+    public void testnotOp1notOp2() {
+        Tarif tarif = new Tarif();
+        int Preis = tarif.berechneStartgebuehr(false, false);
+        assertEquals(2, Preis);
+    }
+
+    @Test
+    public void testOp1andOp2() {
+        Tarif tarif = new Tarif();
+        int Preis = tarif.berechneStartgebuehr(true, true);
+        assertEquals(5, Preis);
     }
 }

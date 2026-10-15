@@ -26,4 +26,27 @@ public class Tarif {
         }
         return tage * 10;
     }
+
+    /**
+     * Berechnet die Startgebuehr einer Ausleihe.
+     * Grundgebuehr 2 Euro. Ein Lastenrad kostet das Doppelte.
+     * Wer einen Helm dazu nimmt, zahlt 1 Euro extra.
+     *
+     * @param lastenrad true, wenn ein Lastenrad ausgeliehen wird
+     * @param mitHelm   true, wenn ein Helm dazu ausgeliehen wird
+     * @return die Startgebuehr in ganzen Euro
+     */
+    public int berechneStartgebuehr(boolean lastenrad, boolean mitHelm) {
+        //Op1
+        int preis = 2;
+        if (lastenrad) {
+            preis = preis * 2;
+        }
+        //Op2
+        if (mitHelm) {
+            preis = preis + 1;
+        }
+        return preis;
+    }
+
 }
